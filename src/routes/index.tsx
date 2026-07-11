@@ -82,7 +82,7 @@ function Wedding() {
 
   const handleTimeUpdate = () => {
     const video = introVideoRef.current;
-    if (video && video.duration && video.duration - video.currentTime <= 0.5) {
+    if (video && video.duration && video.currentTime > 1 && video.duration - video.currentTime <= 0.5) {
       handleComplete();
     }
   };

@@ -52,6 +52,7 @@ function Wedding() {
   const [isMuted, setIsMuted] = useState(false);
   const introVideoRef = useRef<HTMLVideoElement>(null);
   const audioRef = useRef<HTMLAudioElement>(null);
+  const isCompletedRef = useRef(false);
 
   useEffect(() => {
     if (typeof window !== "undefined" && window.innerWidth >= 768) {
@@ -70,41 +71,37 @@ function Wedding() {
     }
   }, []);
 
+  const handleComplete = () => {
+    if (isCompletedRef.current) return;
+    isCompletedRef.current = true;
+    setIsFaded(true);
+    setTimeout(() => {
+      setShowIntro(false);
+    }, 1500);
+  };
+
+  const handleTimeUpdate = () => {
+    const video = introVideoRef.current;
+    if (video && video.duration && video.duration - video.currentTime <= 0.5) {
+      handleComplete();
+    }
+  };
+
   const handleIntroClick = () => {
     const video = introVideoRef.current;
     const audio = audioRef.current;
 
-    if (!isPlaying) {
-      if (video) {
-        video.muted = false;
-        video.play().then(() => {
-          setIsPlaying(true);
-        }).catch((err) => {
-          console.error("Play failed, trying muted:", err);
-          video.muted = true;
-          video.play().then(() => {
-            setIsPlaying(true);
-          });
-        });
-      }
+    if (!isPlaying && video) {
+      setIsPlaying(true);
+      video.play().catch((err) => {
+        console.error("Play failed:", err);
+      });
       if (audio) {
         audio.play().catch((err) => {
           console.error("Audio play failed:", err);
         });
       }
-    } else {
-      setIsFaded(true);
-      setTimeout(() => {
-        setShowIntro(false);
-      }, 1500);
     }
-  };
-
-  const handleVideoEnded = () => {
-    setIsFaded(true);
-    setTimeout(() => {
-      setShowIntro(false);
-    }, 1500);
   };
 
   const toggleMute = () => {
@@ -132,15 +129,11 @@ function Wedding() {
             e.preventDefault();
             handleIntroClick();
           }}
+          className={`fixed inset-0 z-50 cursor-pointer md:hidden pointer-events-${isFaded ? "none" : "auto"}`}
           style={{
-            position: "fixed",
-            inset: 0,
-            zIndex: 50,
-            cursor: "pointer",
-            transition: "opacity 1.5s ease",
-            background: "radial-gradient(circle at center, #1b261b 0%, #0d120d 100%)",
+            backgroundColor: "#f6f4f2",
+            transition: "opacity 1.5s cubic-bezier(0.4, 0, 0.2, 1)",
             opacity: isFaded ? 0 : 1,
-            pointerEvents: isFaded ? "none" : "auto",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
@@ -160,13 +153,18 @@ function Wedding() {
               muted
               playsInline
               preload="metadata"
-              onEnded={handleVideoEnded}
+              onTimeUpdate={handleTimeUpdate}
+              onEnded={handleComplete}
+              onLoadedMetadata={(e) => {
+                e.currentTarget.currentTime = 0.1;
+              }}
+              onLoadedData={(e) => {
+                e.currentTarget.currentTime = 0.1;
+              }}
+              className="w-full h-full object-cover"
               style={{
-                width: "100%",
-                height: "100%",
-                objectFit: "cover",
-                transition: "transform 1.5s ease",
-                transform: isPlaying ? "scale(1)" : "scale(1.02)",
+                transition: "transform 1.5s cubic-bezier(0.4, 0, 0.2, 1)",
+                transform: isFaded ? "scale(1.05)" : "scale(1)",
               }}
             />
           </div>

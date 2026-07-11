@@ -121,7 +121,7 @@ function Wedding() {
         ref={audioRef}
         src="/background-music.mp3"
         loop
-        preload="auto"
+        preload="none"
         muted={isMuted}
       />
       {showIntro && (
@@ -159,7 +159,7 @@ function Wedding() {
               src="/intro-video.mp4#t=0.1"
               muted
               playsInline
-              preload="auto"
+              preload="metadata"
               onEnded={handleVideoEnded}
               style={{
                 width: "100%",
@@ -217,7 +217,7 @@ function Hero() {
           loop
           muted
           playsInline
-          preload="auto"
+          preload="none"
           style={{ width: "100%", height: "100%", objectFit: "cover" }}
         />
         <div className="overlay" style={{ position: "absolute", inset: 0, background: "rgba(0, 0, 0, 0.42)" }} />

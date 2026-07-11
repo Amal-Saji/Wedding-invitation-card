@@ -117,7 +117,7 @@ function Wedding() {
             zIndex: 50,
             cursor: "pointer",
             transition: "opacity 1.5s ease",
-            backgroundColor: "#111",
+            background: "radial-gradient(circle at center, #1b261b 0%, #0d120d 100%)",
             opacity: isFaded ? 0 : 1,
             pointerEvents: isFaded ? "none" : "auto",
             display: "flex",
@@ -125,26 +125,9 @@ function Wedding() {
             justifyContent: "center",
           }}
         >
-          {/* Blurred background behind the video on desktop */}
-          <div className="absolute inset-0 hidden md:block overflow-hidden pointer-events-none">
-            <video
-              src="/intro-video.mp4#t=0.1"
-              muted
-              playsInline
-              style={{
-                width: "100%",
-                height: "100%",
-                objectFit: "cover",
-                filter: "blur(25px) brightness(0.6)",
-                transform: "scale(1.1)",
-              }}
-            />
-            <div className="absolute inset-0 bg-black/20" />
-          </div>
-
           {/* Actual video player container */}
           <div 
-            className="relative w-full h-full md:h-[90vh] md:max-w-[480px] md:rounded-lg md:overflow-hidden md:shadow-[0_25px_60px_-15px_rgba(0,0,0,0.5)] md:border md:border-white/10 transition-all duration-300"
+            className="relative w-full h-full md:h-[85vh] md:max-w-[480px] md:rounded-sm md:overflow-hidden md:shadow-[0_20px_60px_rgba(0,0,0,0.65)] md:border-4 md:border-double md:border-sand/35 transition-all duration-300"
             style={{
               aspectRatio: "9/16",
             }}

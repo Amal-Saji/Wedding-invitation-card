@@ -128,6 +128,10 @@ function Wedding() {
         <div
           id="intro-screen"
           onClick={handleIntroClick}
+          onTouchStart={(e) => {
+            e.preventDefault();
+            handleIntroClick();
+          }}
           style={{
             position: "fixed",
             inset: 0,

@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Toaster } from "sonner";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import heroCouple from "@/assets/hero-couple.jpg";
 import story1 from "@/assets/story-1.jpg";
 import story2 from "@/assets/story-2.jpg";
@@ -52,6 +52,23 @@ function Wedding() {
   const [isMuted, setIsMuted] = useState(false);
   const introVideoRef = useRef<HTMLVideoElement>(null);
   const audioRef = useRef<HTMLAudioElement>(null);
+
+  useEffect(() => {
+    if (typeof window !== "undefined" && window.innerWidth >= 768) {
+      setShowIntro(false);
+      
+      const startAudioOnInteraction = () => {
+        if (audioRef.current) {
+          audioRef.current.play().catch((err) => console.log("Autoplay blocked:", err));
+        }
+        window.removeEventListener("click", startAudioOnInteraction);
+      };
+      window.addEventListener("click", startAudioOnInteraction);
+      return () => {
+        window.removeEventListener("click", startAudioOnInteraction);
+      };
+    }
+  }, []);
 
   const handleIntroClick = () => {
     const video = introVideoRef.current;

@@ -63,10 +63,24 @@ function Wedding() {
           audioRef.current.play().catch((err) => console.log("Autoplay blocked:", err));
         }
         window.removeEventListener("click", startAudioOnInteraction);
+        window.removeEventListener("touchstart", startAudioOnInteraction);
+        window.removeEventListener("pointerdown", startAudioOnInteraction);
+        window.removeEventListener("keydown", startAudioOnInteraction);
+        window.removeEventListener("scroll", startAudioOnInteraction);
       };
+      
       window.addEventListener("click", startAudioOnInteraction);
+      window.addEventListener("touchstart", startAudioOnInteraction);
+      window.addEventListener("pointerdown", startAudioOnInteraction);
+      window.addEventListener("keydown", startAudioOnInteraction);
+      window.addEventListener("scroll", startAudioOnInteraction);
+      
       return () => {
         window.removeEventListener("click", startAudioOnInteraction);
+        window.removeEventListener("touchstart", startAudioOnInteraction);
+        window.removeEventListener("pointerdown", startAudioOnInteraction);
+        window.removeEventListener("keydown", startAudioOnInteraction);
+        window.removeEventListener("scroll", startAudioOnInteraction);
       };
     }
   }, []);
@@ -226,12 +240,12 @@ function Hero() {
         <p className="animate-fade-up font-sans-ui text-[11px] uppercase tracking-[0.5em] text-ivory/90">
           Together with their families
         </p>
-        <h1 className="animate-fade-up mt-8 font-display text-6xl leading-none sm:text-8xl md:text-9xl">
-          Noah
-          <span className="mx-6 inline-block font-script text-5xl align-middle text-sand sm:text-6xl md:text-7xl">
+        <h1 className="animate-fade-up mt-8 font-display text-6xl leading-tight sm:text-8xl md:text-9xl flex flex-col items-center gap-1 sm:gap-2">
+          <span>Noah</span>
+          <span className="font-script text-5xl text-sand sm:text-6xl md:text-7xl my-0 sm:my-1">
             &amp;
           </span>
-          Emma
+          <span>Emma</span>
         </h1>
         <div className="animate-fade-up mt-8 flex flex-col items-center justify-center select-none" style={{ animationDelay: "0.3s" }}>
           <div className="relative flex flex-col items-center">

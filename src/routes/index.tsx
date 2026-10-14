@@ -481,17 +481,13 @@ function WelcomeMessageSection() {
           <span className="ornament-line" />
         </div>
 
-        {/* Parents' Cordial Invitation */}
-        <div className="text-center max-w-3xl mx-auto space-y-3">
-          <p className="font-display text-2xl sm:text-3xl text-primary font-semibold tracking-wide">
-            MR. BENNY MATHEW &amp; MRS. ELSAMMA BENNY
-          </p>
-          <p className="font-sans-ui text-xs sm:text-sm uppercase tracking-[0.3em] text-foreground/75 font-medium">
-            Pulickal House, Mevada, Pala
-          </p>
-          
-          <p className="font-body text-base sm:text-lg italic text-foreground/80 leading-relaxed pt-2">
-            Cordially invite your esteemed presence and prayerful blessings on the auspicious occasion of the wedding of their beloved son
+        <div className="text-center max-w-2xl mx-auto">
+          <Ornament label="Wedding Invitation" />
+          <h2 className="mt-3 font-display text-3xl sm:text-4xl text-primary font-semibold">
+            Together with Our Families
+          </h2>
+          <p className="font-body text-base sm:text-lg italic text-foreground/80 leading-relaxed mt-4">
+            Cordially invite your esteemed presence and prayerful blessings on the auspicious occasion of the wedding of
           </p>
         </div>
 

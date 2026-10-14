@@ -481,29 +481,32 @@ function WelcomeMessageSection() {
           <span className="ornament-line" />
         </div>
 
+        {/* Heartfelt Invitation Heading */}
         <div className="text-center max-w-2xl mx-auto">
-          <Ornament label="Wedding Invitation" />
-          <h2 className="mt-3 font-display text-3xl sm:text-4xl text-primary font-semibold">
-            Together with Our Families
+          <Ornament label="With Joyful Hearts" />
+          <h2 className="mt-3 font-display text-4xl sm:text-5xl text-primary font-semibold">
+            Two Lives, One Sacred Journey
           </h2>
           <p className="font-body text-base sm:text-lg italic text-foreground/80 leading-relaxed mt-4">
-            Cordially invite your esteemed presence and prayerful blessings on the auspicious occasion of the wedding of
+            With hearts full of love, faith, and gratitude, together with our families, we joyfully invite you to share in our celebration as we unite our lives in holy matrimony.
           </p>
         </div>
 
         {/* Couple Spotlight Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center max-w-4xl mx-auto mt-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch max-w-4xl mx-auto mt-10">
           
           {/* Groom Card */}
-          <div className="rounded-sm border border-primary/25 bg-secondary/30 p-8 text-center shadow-[var(--shadow-soft)]">
-            <span className="font-sans-ui text-[10px] uppercase tracking-[0.4em] text-primary/70 font-semibold block mb-2">
-              The Groom
-            </span>
-            <h3 className="font-script text-4xl sm:text-5xl text-primary font-bold">
-              Abin Benny
-            </h3>
-            <div className="mt-4 pt-4 border-t border-primary/15 text-foreground/80 font-body text-sm sm:text-base leading-relaxed">
-              <p>Son of Mr. Benny Mathew &amp; Mrs. Elsamma Benny</p>
+          <div className="rounded-sm border border-primary/25 bg-secondary/30 p-8 sm:p-10 text-center shadow-[var(--shadow-soft)] flex flex-col justify-between">
+            <div>
+              <span className="font-sans-ui text-[10px] uppercase tracking-[0.4em] text-primary/70 font-semibold block mb-2">
+                The Groom
+              </span>
+              <h3 className="font-script text-4xl sm:text-5xl text-primary font-bold">
+                Abin Benny
+              </h3>
+            </div>
+            <div className="mt-6 pt-4 border-t border-primary/15 text-foreground/80 font-body text-sm sm:text-base leading-relaxed">
+              <p className="font-medium text-foreground">Son of Mr. Benny Mathew &amp; Mrs. Elsamma Benny</p>
               <p className="font-sans-ui text-xs uppercase tracking-wider text-primary/70 mt-1">
                 Pulickal House, Mevada, Pala
               </p>
@@ -511,15 +514,17 @@ function WelcomeMessageSection() {
           </div>
 
           {/* Bride Card */}
-          <div className="rounded-sm border border-primary/25 bg-secondary/30 p-8 text-center shadow-[var(--shadow-soft)]">
-            <span className="font-sans-ui text-[10px] uppercase tracking-[0.4em] text-primary/70 font-semibold block mb-2">
-              The Bride
-            </span>
-            <h3 className="font-script text-4xl sm:text-5xl text-primary font-bold">
-              Rinu Vincent
-            </h3>
-            <div className="mt-4 pt-4 border-t border-primary/15 text-foreground/80 font-body text-sm sm:text-base leading-relaxed">
-              <p>Daughter of Mr. Vincent P. Paul &amp; Mrs. Sily Vincent</p>
+          <div className="rounded-sm border border-primary/25 bg-secondary/30 p-8 sm:p-10 text-center shadow-[var(--shadow-soft)] flex flex-col justify-between">
+            <div>
+              <span className="font-sans-ui text-[10px] uppercase tracking-[0.4em] text-primary/70 font-semibold block mb-2">
+                The Bride
+              </span>
+              <h3 className="font-script text-4xl sm:text-5xl text-primary font-bold">
+                Rinu Vincent
+              </h3>
+            </div>
+            <div className="mt-6 pt-4 border-t border-primary/15 text-foreground/80 font-body text-sm sm:text-base leading-relaxed">
+              <p className="font-medium text-foreground">Daughter of Mr. Vincent P. Paul &amp; Mrs. Sily Vincent</p>
               <p className="font-sans-ui text-xs uppercase tracking-wider text-primary/70 mt-1">
                 Pulikkalayil House, Madakkathaanam, Ernakulam
               </p>
@@ -528,13 +533,16 @@ function WelcomeMessageSection() {
 
         </div>
 
+        {/* Bottom Transition */}
         <div className="mt-12 text-center">
-          <p className="font-sans-ui text-xs sm:text-sm uppercase tracking-[0.35em] text-primary/80 font-medium">
-            Which, by the grace of the Lord, will be solemnised on
+          <p className="font-body text-base sm:text-lg italic text-primary/90 max-w-xl mx-auto">
+            "Your presence, love, and prayers will make our celebration truly complete."
           </p>
-          <div className="mt-4 flex items-center justify-center gap-3 text-primary/60">
+          <div className="mt-4 flex items-center justify-center gap-3 text-primary/40">
             <span className="h-px w-16 bg-primary/20" />
-            <span className="text-sm">💍 &amp; 💒</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" className="text-sand">
+              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+            </svg>
             <span className="h-px w-16 bg-primary/20" />
           </div>
         </div>

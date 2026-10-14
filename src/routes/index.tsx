@@ -40,11 +40,12 @@ export const Route = createFileRoute("/")({
 });
 
 const galleryImgs = [
-  { src: "/images/wedding-invitation-card.png", alt: "Official Wedding Invitation Card", cls: "col-span-2 row-span-2" },
-  { src: "/images/gallery-1.jpg", alt: "Abin & Rinu — In Holy Matrimony", cls: "col-span-1 row-span-1" },
+  { src: "/images/gallery-1.jpg", alt: "Abin & Rinu — In Holy Matrimony", cls: "col-span-2 row-span-2" },
   { src: "/images/gallery-2.jpg", alt: "Cherished Moments", cls: "col-span-1 row-span-1" },
+  { src: "/images/story-1.jpg", alt: "A Journey of Love", cls: "col-span-1 row-span-1" },
   { src: "/images/gallery-3.jpg", alt: "Bound by Love & Faith", cls: "col-span-1 row-span-1" },
   { src: "/images/gallery-4.jpg", alt: "Forever Together", cls: "col-span-1 row-span-1" },
+  { src: "/images/story-2.jpg", alt: "Two Hearts as One", cls: "col-span-1 row-span-1" },
 ];
 
 function CelebrationApp() {
@@ -201,11 +202,11 @@ function CelebrationApp() {
         </div>
       )}
       <HeroVideo />
-      <WelcomeMessageSection onOpenLightbox={(idx) => setLightboxIndex(idx)} />
+      <WelcomeMessageSection />
       <EventsBreakdownSection />
       <CountdownSection />
       <Gallery onOpenLightbox={(idx) => setLightboxIndex(idx)} />
-      <Venue onOpenLightbox={() => setLightboxIndex(0)} />
+      <Venue />
       <Footer />
 
       {/* Lightbox Modal */}
@@ -450,7 +451,7 @@ function HeroVideo() {
   );
 }
 
-function WelcomeMessageSection({ onOpenLightbox }: { onOpenLightbox: (index: number) => void }) {
+function WelcomeMessageSection() {
   return (
     <section className="relative bg-background py-20 sm:py-24 px-6 flex items-center justify-center">
       <div className="relative z-10 mx-auto w-full max-w-5xl rounded-sm border border-primary/20 bg-ivory p-8 sm:p-14 shadow-[var(--shadow-frame)] text-foreground">
@@ -531,23 +532,14 @@ function WelcomeMessageSection({ onOpenLightbox }: { onOpenLightbox: (index: num
 
         </div>
 
-        {/* Official Card Preview Thumbnail */}
         <div className="mt-12 text-center">
-          <p className="font-sans-ui text-xs uppercase tracking-[0.3em] text-foreground/75 mb-4">
-            Which, by the grace of the Lord, will be solemnised
+          <p className="font-sans-ui text-xs sm:text-sm uppercase tracking-[0.35em] text-primary/80 font-medium">
+            Which, by the grace of the Lord, will be solemnised on
           </p>
-          <div
-            onClick={() => onOpenLightbox(0)}
-            className="group relative max-w-sm mx-auto overflow-hidden rounded-sm border-2 border-primary/30 shadow-lg cursor-pointer bg-white transition-all duration-300 hover:shadow-2xl hover:scale-[1.02]"
-          >
-            <img
-              src="/images/wedding-invitation-card.png"
-              alt="Official Wedding Invitation Card"
-              className="w-full h-auto object-cover"
-            />
-            <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white font-sans-ui text-xs uppercase tracking-widest gap-2">
-              <span>🔍 Click to View Full Invitation Card</span>
-            </div>
+          <div className="mt-4 flex items-center justify-center gap-3 text-primary/60">
+            <span className="h-px w-16 bg-primary/20" />
+            <span className="text-sm">💍 &amp; 💒</span>
+            <span className="h-px w-16 bg-primary/20" />
           </div>
         </div>
 
@@ -859,7 +851,7 @@ function Gallery({ onOpenLightbox }: { onOpenLightbox: (index: number) => void }
   );
 }
 
-function Venue({ onOpenLightbox }: { onOpenLightbox: (index: number) => void }) {
+function Venue() {
   return (
     <section id="venue" className="relative bg-background py-24">
       <div className="mx-auto max-w-6xl px-6">
@@ -871,43 +863,31 @@ function Venue({ onOpenLightbox }: { onOpenLightbox: (index: number) => void }) 
           </p>
         </div>
 
-        <div className="mt-16 grid gap-10 lg:grid-cols-2 items-center">
-          {/* Main Wedding Invitation Card Preview */}
-          <div
-            onClick={() => onOpenLightbox(0)}
-            className="group relative overflow-hidden rounded-sm border-2 border-primary/20 shadow-[var(--shadow-frame)] cursor-pointer bg-white"
-          >
-            <img
-              src="/images/wedding-invitation-card.png"
-              alt="Official Wedding Invitation Card"
-              loading="lazy"
-              className="w-full h-auto object-cover transition duration-700 group-hover:scale-105"
-            />
-            <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white font-sans-ui text-xs uppercase tracking-widest gap-2">
-              <span>🔍 Click to View Full Card</span>
-            </div>
-          </div>
-
-          <div className="flex flex-col justify-center gap-6">
-            <VenueCard
-              title="St. Mary's Church, Mevada, Pala"
-              subtitle="Holy Matrimony · Thu, 22 Oct 2026 · 10:30 AM"
-              address="Mevada, Pala, Kottayam, Kerala"
-              maps="https://www.google.com/maps/search/?api=1&query=St+Marys+Church+Mevada+Pala"
-            />
-            <VenueCard
-              title="St. George's Church Mutholy Auditorium"
-              subtitle="Wedding Reception & Lunch · Thu, 22 Oct 2026"
-              address="Mutholy, Pala, Kottayam, Kerala"
-              maps="https://www.google.com/maps/search/?api=1&query=St+Georges+Church+Mutholy+Auditorium"
-            />
-            <VenueCard
-              title="Vimala Matha Church, Kadalikkad"
-              subtitle="Engagement Ceremony & Reception · Mon, 19 Oct 2026 · 11:45 AM"
-              address="Kadalikkad, Muvattupuzha (Reception at Parish Auditorium)"
-              maps="https://www.google.com/maps/search/?api=1&query=Vimala+Matha+Church+Kadalikkad"
-            />
-          </div>
+        <div className="mt-16 grid gap-8 md:grid-cols-3 max-w-6xl mx-auto">
+          <VenueCard
+            badge="Holy Matrimony"
+            icon="💒"
+            title="St. Mary's Church, Mevada, Pala"
+            subtitle="Thursday, 22 October 2026 · 10:30 AM"
+            address="Mevada, Pala, Kottayam, Kerala"
+            maps="https://www.google.com/maps/search/?api=1&query=St+Marys+Church+Mevada+Pala"
+          />
+          <VenueCard
+            badge="Wedding Reception"
+            icon="🥂"
+            title="St. George's Church Mutholy Auditorium"
+            subtitle="Thursday, 22 October 2026 · After Service"
+            address="Mutholy, Pala, Kottayam, Kerala"
+            maps="https://www.google.com/maps/search/?api=1&query=St+Georges+Church+Mutholy+Auditorium"
+          />
+          <VenueCard
+            badge="Engagement &amp; Reception"
+            icon="💍"
+            title="Vimala Matha Church, Kadalikkad"
+            subtitle="Monday, 19 October 2026 · 11:45 AM"
+            address="Kadalikkad, Muvattupuzha (Reception at Parish Auditorium)"
+            maps="https://www.google.com/maps/search/?api=1&query=Vimala+Matha+Church+Kadalikkad"
+          />
         </div>
       </div>
     </section>
@@ -915,20 +895,26 @@ function Venue({ onOpenLightbox }: { onOpenLightbox: (index: number) => void }) 
 }
 
 function VenueCard({
-  title, subtitle, address, maps,
-}: { title: string; subtitle: string; address: string; maps: string }) {
+  badge, icon, title, subtitle, address, maps,
+}: { badge: string; icon: string; title: string; subtitle: string; address: string; maps: string }) {
   return (
-    <article className="relative rounded-sm border border-primary/25 bg-ivory p-6 sm:p-8 backdrop-blur-sm shadow-[var(--shadow-soft)]">
-      <p className="font-sans-ui text-xs uppercase tracking-[0.3em] font-bold text-primary/70">
-        {subtitle}
-      </p>
-      <h3 className="mt-2 font-display text-2xl sm:text-3xl text-primary font-semibold">{title}</h3>
-      <p className="mt-2 font-body text-base italic text-foreground/75">{address}</p>
+    <article className="relative rounded-sm border border-primary/25 bg-ivory p-6 sm:p-8 backdrop-blur-sm shadow-[var(--shadow-soft)] flex flex-col justify-between hover:-translate-y-1 hover:border-primary/50 transition-all duration-300">
+      <div>
+        <div className="flex items-center justify-between mb-4">
+          <span className="font-sans-ui text-[10px] uppercase tracking-[0.35em] font-bold text-primary/70">
+            {badge}
+          </span>
+          <span className="text-2xl">{icon}</span>
+        </div>
+        <h3 className="font-display text-2xl text-primary font-semibold leading-snug">{title}</h3>
+        <p className="mt-2 font-sans-ui text-xs font-semibold text-wine uppercase tracking-wider">{subtitle}</p>
+        <p className="mt-3 font-body text-base italic text-foreground/75 leading-relaxed">{address}</p>
+      </div>
       <a
         href={maps}
         target="_blank"
         rel="noopener noreferrer"
-        className="mt-4 inline-flex items-center gap-2 border-b border-primary pb-1 font-sans-ui text-[11px] uppercase tracking-[0.35em] text-primary font-semibold transition hover:opacity-75"
+        className="mt-6 inline-flex items-center gap-2 border-b border-primary pb-1 font-sans-ui text-[11px] uppercase tracking-[0.35em] text-primary font-semibold transition hover:opacity-75 self-start"
       >
         Open in Maps →
       </a>

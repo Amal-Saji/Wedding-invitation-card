@@ -742,7 +742,7 @@ function EventsBreakdownSection() {
                   <span className="text-sm">↗</span>
                 </a>
                 <a
-                  href="https://www.google.com/maps/search/?api=1&query=St+Georges+Church+Mutholy+Auditorium"
+                  href="https://maps.app.goo.gl/RzZrRmYzSAMGoSVz6"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-2 py-3 px-3 rounded-sm border border-primary/30 bg-secondary/70 hover:bg-secondary text-primary text-xs font-sans-ui uppercase tracking-[0.2em] font-semibold transition-all duration-300 hover:border-primary cursor-pointer"
@@ -943,7 +943,7 @@ function Venue() {
             title="St. George's Church Mutholy Auditorium"
             subtitle="Thursday, 22 October 2026 · After Service"
             address="Mutholy, Pala, Kottayam, Kerala"
-            maps="https://www.google.com/maps/search/?api=1&query=St+Georges+Church+Mutholy+Auditorium"
+            maps="https://maps.app.goo.gl/RzZrRmYzSAMGoSVz6"
           />
           <VenueCard
             badge="Engagement &amp; Reception"

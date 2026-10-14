@@ -1012,27 +1012,36 @@ function Footer() {
     );
 
   return (
-    <footer className="bg-primary py-16 text-center text-primary-foreground border-t border-sand/20">
-      <p className="font-display text-3xl uppercase tracking-widest text-sand">
+    <footer className="bg-primary py-16 px-4 sm:px-6 text-center text-primary-foreground border-t border-sand/20">
+      <p className="font-display text-xl sm:text-2xl uppercase tracking-[0.3em] text-sand/90">
         Wedding Celebration
       </p>
-      <p className="mt-2 font-script text-5xl sm:text-6xl text-sand">
+      
+      {/* Couple Names - perfectly scaled for mobile so it never overflows or touches the edges */}
+      <h3 className="mt-2 font-script text-3xl sm:text-4xl md:text-5xl text-sand px-2 max-w-xl mx-auto leading-tight">
         Abin Benny &amp; Rinu Vincent
-      </p>
-      <div className="mt-3 flex items-center justify-center gap-3 font-sans-ui text-[12px] uppercase tracking-[0.4em] text-primary-foreground/80">
+      </h3>
+
+      {/* Dates with delicate gold sparkle instead of heavy bullet */}
+      <div className="mt-3 flex flex-wrap items-center justify-center gap-2 sm:gap-3 font-sans-ui text-[11px] sm:text-xs uppercase tracking-[0.25em] text-primary-foreground/85 px-2">
         <span>19 · 10 · 2026</span>
-        <span>•</span>
+        <span className="text-[#C59B27] text-[10px]">✦</span>
         <span>22 · 10 · 2026</span>
       </div>
-      <div className="ornament-divider mt-6 text-primary-foreground">
-        <span className="ornament-line" style={{ background: "linear-gradient(90deg, transparent, currentColor, transparent)" }} />
-        <svg width="20" height="20" viewBox="0 0 32 32" fill="currentColor"><circle cx="16" cy="16" r="2" /></svg>
-        <span className="ornament-line" style={{ background: "linear-gradient(90deg, transparent, currentColor, transparent)" }} />
+
+      {/* Royal heart ornament divider */}
+      <div className="flex items-center justify-center gap-3 my-5 text-sand/50">
+        <span className="h-px w-12 sm:w-16 bg-gradient-to-r from-transparent via-sand/40 to-transparent" />
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" className="text-sand/80">
+          <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+        </svg>
+        <span className="h-px w-12 sm:w-16 bg-gradient-to-l from-transparent via-sand/40 to-transparent" />
       </div>
-      <p className="mt-6 font-script text-2xl sm:text-3xl text-sand/90 px-4 max-w-xl mx-auto">
+
+      <p className="font-script text-xl sm:text-2xl md:text-3xl text-sand/90 px-4 max-w-lg mx-auto leading-relaxed">
         “Therefore what God has joined together, let no one separate.”
       </p>
-      <div className="mt-4">
+      <div className="mt-3">
         <p className="font-body text-sm sm:text-base italic text-primary-foreground/85">
           With best compliments from <strong className="font-semibold text-sand">Bibin Benny</strong>
         </p>

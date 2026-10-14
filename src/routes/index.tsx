@@ -554,177 +554,204 @@ function WelcomeMessageSection() {
 
 function EventsBreakdownSection() {
   return (
-    <section id="events" className="relative bg-secondary py-20 px-6">
+    <section id="events" className="relative bg-secondary py-20 px-4 sm:px-6">
       <div className="mx-auto max-w-5xl">
-        <div className="text-center mb-14">
+        {/* Section Header */}
+        <div className="text-center mb-12 sm:mb-16">
           <Ornament label="The Sacred Celebrations" />
-          <h2 className="font-display text-4xl sm:text-6xl text-primary font-semibold">
+          <h2 className="font-display text-4xl sm:text-6xl text-primary font-semibold tracking-tight">
             Programme &amp; Celebrations
           </h2>
-          <p className="mt-4 font-body text-lg italic text-foreground/75 max-w-xl mx-auto">
+          <p className="mt-3 font-body text-base sm:text-lg italic text-foreground/80 max-w-xl mx-auto">
             We cordially invite your esteemed presence and prayerful blessings on the auspicious celebrations of our union.
           </p>
         </div>
 
+        {/* Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           
-          {/* Engagement Card */}
-          <div className="relative rounded-sm border border-sand-deep/80 bg-ivory p-7 sm:p-9 shadow-[var(--shadow-frame)] flex flex-col justify-between overflow-hidden group hover:border-sand transition-all duration-300">
-            {/* Top Golden Foil Trim */}
-            <span className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-transparent via-[#C59B27] to-transparent" />
-            
-            <div>
-              {/* Header with Badge & Script */}
-              <div className="text-center pb-6 border-b border-primary/10">
-                <span className="inline-block px-3 py-1 rounded-full bg-secondary/60 text-[10px] font-sans-ui uppercase tracking-[0.35em] text-primary/80 font-bold mb-3 border border-sand/40">
-                  Solemn Betrothal
-                </span>
-                <h3 className="font-display text-3xl sm:text-4xl text-primary font-bold tracking-tight">
-                  The Engagement
-                </h3>
-                <p className="font-script text-2xl sm:text-3xl text-[#C59B27] mt-1">
-                  A Promise of Forever
-                </p>
+          {/* 1. Engagement Card */}
+          <div className="relative rounded-md bg-ivory p-2 sm:p-2.5 shadow-[var(--shadow-frame)] border border-primary/20 transition-all duration-300 hover:shadow-2xl">
+            <div className="border border-[#C59B27]/40 rounded-sm p-6 sm:p-8 flex flex-col justify-between h-full bg-gradient-to-b from-[#FFFDF9] via-[#FAF6EE] to-[#F5EEDC]">
+              
+              <div>
+                {/* Header Badge & Title */}
+                <div className="text-center">
+                  <div className="flex items-center justify-center gap-2 mb-2 text-[#C59B27]">
+                    <span className="h-px w-8 bg-gradient-to-r from-transparent to-[#C59B27]/60" />
+                    <span className="text-xs">✦</span>
+                    <span className="h-px w-8 bg-gradient-to-l from-transparent to-[#C59B27]/60" />
+                  </div>
+                  <span className="font-sans-ui text-[10px] sm:text-[11px] uppercase tracking-[0.35em] text-[#C59B27] font-bold block mb-1">
+                    Solemn Betrothal
+                  </span>
+                  <h3 className="font-display text-3xl sm:text-4xl text-primary font-bold tracking-tight">
+                    The Engagement
+                  </h3>
+                  <p className="font-script text-2xl sm:text-3xl text-primary/80 mt-1">
+                    A Promise of Forever
+                  </p>
+                </div>
 
-                {/* Date & Time Ribbon */}
-                <div className="mt-5 inline-flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-3 py-2 px-4 rounded-sm bg-secondary/40 border border-primary/10 text-primary">
-                  <span className="font-display text-base font-semibold tracking-wide">
+                {/* Date & Time Divider */}
+                <div className="my-6 py-3 border-y border-primary/15 text-center bg-secondary/30">
+                  <span className="font-display text-lg sm:text-xl font-bold tracking-wide text-primary block">
                     Monday, 19 October 2026
                   </span>
-                  <span className="hidden sm:inline text-primary/30">•</span>
-                  <span className="font-sans-ui text-xs font-bold tracking-widest text-primary/80 uppercase">
+                  <span className="font-sans-ui text-xs uppercase tracking-[0.3em] text-[#C59B27] font-bold mt-1 block">
                     11:45 AM
                   </span>
                 </div>
+
+                {/* Event Locations */}
+                <div className="space-y-6 text-center">
+                  {/* Ceremony */}
+                  <div className="space-y-1">
+                    <span className="font-sans-ui text-[10px] uppercase tracking-[0.3em] text-primary/70 font-semibold block">
+                      Sacred Ceremony
+                    </span>
+                    <h4 className="font-display text-2xl font-bold text-primary">
+                      Vimala Matha Church
+                    </h4>
+                    <p className="font-body text-sm text-foreground/75">
+                      Kadalikkad, Muvattupuzha
+                    </p>
+                  </div>
+
+                  {/* Divider */}
+                  <div className="flex items-center justify-center gap-3 text-primary/25">
+                    <span className="h-px w-12 bg-primary/20" />
+                    <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor" className="text-[#C59B27]">
+                      <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                    </svg>
+                    <span className="h-px w-12 bg-primary/20" />
+                  </div>
+
+                  {/* Reception */}
+                  <div className="space-y-1">
+                    <span className="font-sans-ui text-[10px] uppercase tracking-[0.3em] text-primary/70 font-semibold block">
+                      Fellowship &amp; Luncheon
+                    </span>
+                    <h4 className="font-display text-2xl font-bold text-primary">
+                      Parish Auditorium
+                    </h4>
+                    <p className="font-body text-sm italic text-foreground/75">
+                      Directly following the sacred service
+                    </p>
+                  </div>
+                </div>
               </div>
 
-              {/* Event Flow */}
-              <div className="mt-6 space-y-6">
-                {/* Sacred Service */}
-                <div className="relative pl-7 before:absolute before:left-0 before:top-1.5 before:w-3.5 before:h-3.5 before:rounded-full before:border-2 before:border-[#C59B27] before:bg-ivory">
-                  <span className="text-[10px] font-sans-ui uppercase tracking-[0.3em] text-[#C59B27] font-bold block">
-                    Ceremony
-                  </span>
-                  <h4 className="font-display text-xl sm:text-2xl font-bold text-primary mt-0.5">
-                    Vimala Matha Church
-                  </h4>
-                  <p className="font-sans-ui text-xs text-foreground/70 tracking-wide mt-0.5">
-                    Kadalikkad, Muvattupuzha
-                  </p>
-                </div>
-
-                {/* Reception / Fellowship */}
-                <div className="relative pl-7 before:absolute before:left-0 before:top-1.5 before:w-3.5 before:h-3.5 before:rounded-full before:border-2 before:border-primary/40 before:bg-ivory">
-                  <span className="text-[10px] font-sans-ui uppercase tracking-[0.3em] text-primary/70 font-bold block">
-                    Fellowship &amp; Luncheon
-                  </span>
-                  <h4 className="font-display text-xl sm:text-2xl font-bold text-primary mt-0.5">
-                    Parish Auditorium
-                  </h4>
-                  <p className="font-body text-sm italic text-foreground/75 mt-0.5">
-                    Directly following the betrothal blessing
-                  </p>
-                </div>
+              {/* Action Button */}
+              <div className="mt-8 pt-5 border-t border-primary/15">
+                <a
+                  href="https://www.google.com/maps/search/?api=1&query=Vimala+Matha+Church+Kadalikkad"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-sm bg-primary text-ivory hover:bg-wine-deep text-xs font-sans-ui uppercase tracking-[0.2em] font-semibold shadow-sm transition-all duration-300 hover:shadow-md cursor-pointer"
+                >
+                  <span>📍 Kadalikkad Church Location</span>
+                  <span className="text-sm">↗</span>
+                </a>
               </div>
-            </div>
 
-            {/* Actions */}
-            <div className="mt-8 pt-5 border-t border-primary/10 flex items-center justify-between">
-              <a
-                href="https://www.google.com/maps/search/?api=1&query=Vimala+Matha+Church+Kadalikkad"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-sm bg-secondary/50 hover:bg-secondary text-primary font-sans-ui text-[11px] uppercase tracking-[0.25em] font-bold border border-primary/15 transition-all duration-300"
-              >
-                <span>📍 Kadalikkad Church</span>
-                <span className="text-xs">→</span>
-              </a>
-              <span className="text-xs font-script text-xl text-[#C59B27]">
-                With Love
-              </span>
             </div>
           </div>
 
-          {/* Wedding Card */}
-          <div className="relative rounded-sm border-2 border-primary/40 bg-ivory p-7 sm:p-9 shadow-[var(--shadow-frame)] flex flex-col justify-between overflow-hidden group hover:border-primary transition-all duration-300">
-            {/* Top Royal Wine & Gold Trim */}
-            <span className="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-wine via-[#C59B27] to-wine" />
+          {/* 2. Wedding Card */}
+          <div className="relative rounded-md bg-ivory p-2 sm:p-2.5 shadow-[var(--shadow-frame)] border-2 border-wine/40 transition-all duration-300 hover:shadow-2xl">
+            <div className="border border-wine/30 rounded-sm p-6 sm:p-8 flex flex-col justify-between h-full bg-gradient-to-b from-[#FFFDF9] via-[#FAF6EE] to-[#F7EFE6]">
+              
+              <div>
+                {/* Header Badge & Title */}
+                <div className="text-center">
+                  <div className="flex items-center justify-center gap-2 mb-2 text-wine">
+                    <span className="h-px w-8 bg-gradient-to-r from-transparent to-wine/60" />
+                    <span className="text-xs">✦</span>
+                    <span className="h-px w-8 bg-gradient-to-l from-transparent to-wine/60" />
+                  </div>
+                  <span className="font-sans-ui text-[10px] sm:text-[11px] uppercase tracking-[0.35em] text-wine font-bold block mb-1">
+                    Holy Matrimony
+                  </span>
+                  <h3 className="font-display text-3xl sm:text-4xl text-primary font-bold tracking-tight">
+                    The Wedding
+                  </h3>
+                  <p className="font-script text-2xl sm:text-3xl text-wine mt-1">
+                    United in Holy Grace
+                  </p>
+                </div>
 
-            <div>
-              {/* Header with Badge & Script */}
-              <div className="text-center pb-6 border-b border-primary/10">
-                <span className="inline-block px-3 py-1 rounded-full bg-primary/10 text-[10px] font-sans-ui uppercase tracking-[0.35em] text-wine font-bold mb-3 border border-wine/25">
-                  Holy Matrimony
-                </span>
-                <h3 className="font-display text-3xl sm:text-4xl text-primary font-bold tracking-tight">
-                  The Wedding
-                </h3>
-                <p className="font-script text-2xl sm:text-3xl text-wine mt-1">
-                  United in Holy Grace
-                </p>
-
-                {/* Date & Time Ribbon */}
-                <div className="mt-5 inline-flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-3 py-2 px-4 rounded-sm bg-primary/10 border border-wine/20 text-wine">
-                  <span className="font-display text-base font-semibold tracking-wide text-primary">
+                {/* Date & Time Divider */}
+                <div className="my-6 py-3 border-y border-wine/20 text-center bg-wine/[0.04]">
+                  <span className="font-display text-lg sm:text-xl font-bold tracking-wide text-primary block">
                     Thursday, 22 October 2026
                   </span>
-                  <span className="hidden sm:inline text-wine/40">•</span>
-                  <span className="font-sans-ui text-xs font-bold tracking-widest uppercase">
+                  <span className="font-sans-ui text-xs uppercase tracking-[0.3em] text-wine font-bold mt-1 block">
                     10:30 AM
                   </span>
                 </div>
+
+                {/* Event Locations */}
+                <div className="space-y-6 text-center">
+                  {/* Ceremony */}
+                  <div className="space-y-1">
+                    <span className="font-sans-ui text-[10px] uppercase tracking-[0.3em] text-wine font-semibold block">
+                      Nuptial Blessing &amp; Holy Mass
+                    </span>
+                    <h4 className="font-display text-2xl font-bold text-primary">
+                      St. Mary's Church
+                    </h4>
+                    <p className="font-body text-sm text-foreground/75">
+                      Mevada, Pala, Kottayam
+                    </p>
+                  </div>
+
+                  {/* Divider */}
+                  <div className="flex items-center justify-center gap-3 text-wine/30">
+                    <span className="h-px w-12 bg-wine/25" />
+                    <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor" className="text-wine">
+                      <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                    </svg>
+                    <span className="h-px w-12 bg-wine/25" />
+                  </div>
+
+                  {/* Reception */}
+                  <div className="space-y-1">
+                    <span className="font-sans-ui text-[10px] uppercase tracking-[0.3em] text-wine font-semibold block">
+                      Wedding Banquet &amp; Reception
+                    </span>
+                    <h4 className="font-display text-2xl font-bold text-primary">
+                      St. George's Church Mutholy Auditorium
+                    </h4>
+                    <p className="font-body text-sm italic text-foreground/75">
+                      Mutholy, Pala · Following the sacred service
+                    </p>
+                  </div>
+                </div>
               </div>
 
-              {/* Event Flow */}
-              <div className="mt-6 space-y-6">
-                {/* Solemn Nuptials */}
-                <div className="relative pl-7 before:absolute before:left-0 before:top-1.5 before:w-3.5 before:h-3.5 before:rounded-full before:border-2 before:border-wine before:bg-wine">
-                  <span className="text-[10px] font-sans-ui uppercase tracking-[0.3em] text-wine font-bold block">
-                    Nuptial Blessing &amp; Holy Mass
-                  </span>
-                  <h4 className="font-display text-xl sm:text-2xl font-bold text-primary mt-0.5">
-                    St. Mary's Church
-                  </h4>
-                  <p className="font-sans-ui text-xs text-foreground/70 tracking-wide mt-0.5">
-                    Mevada, Pala, Kottayam
-                  </p>
-                </div>
-
-                {/* Wedding Reception */}
-                <div className="relative pl-7 before:absolute before:left-0 before:top-1.5 before:w-3.5 before:h-3.5 before:rounded-full before:border-2 before:border-primary/40 before:bg-ivory">
-                  <span className="text-[10px] font-sans-ui uppercase tracking-[0.3em] text-primary/70 font-bold block">
-                    Wedding Banquet &amp; Reception
-                  </span>
-                  <h4 className="font-display text-xl sm:text-2xl font-bold text-primary mt-0.5">
-                    St. George's Church Mutholy Auditorium
-                  </h4>
-                  <p className="font-body text-sm italic text-foreground/75 mt-0.5">
-                    Mutholy, Pala · Following the ceremony
-                  </p>
-                </div>
+              {/* Action Buttons */}
+              <div className="mt-8 pt-5 border-t border-primary/15 grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <a
+                  href="https://www.google.com/maps/search/?api=1&query=St+Marys+Church+Mevada+Pala"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 py-3 px-3 rounded-sm bg-primary text-ivory hover:bg-wine-deep text-xs font-sans-ui uppercase tracking-[0.2em] font-semibold shadow-sm transition-all duration-300 hover:shadow-md cursor-pointer"
+                >
+                  <span>📍 Church Map</span>
+                  <span className="text-sm">↗</span>
+                </a>
+                <a
+                  href="https://www.google.com/maps/search/?api=1&query=St+Georges+Church+Mutholy+Auditorium"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 py-3 px-3 rounded-sm border border-primary/30 bg-secondary/70 hover:bg-secondary text-primary text-xs font-sans-ui uppercase tracking-[0.2em] font-semibold transition-all duration-300 hover:border-primary cursor-pointer"
+                >
+                  <span>📍 Reception Map</span>
+                  <span className="text-sm">↗</span>
+                </a>
               </div>
-            </div>
 
-            {/* Actions */}
-            <div className="mt-8 pt-5 border-t border-primary/10 flex flex-wrap gap-2 justify-between items-center">
-              <a
-                href="https://www.google.com/maps/search/?api=1&query=St+Marys+Church+Mevada+Pala"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-3 py-2 rounded-sm bg-secondary/50 hover:bg-secondary text-primary font-sans-ui text-[11px] uppercase tracking-[0.2em] font-bold border border-primary/15 transition-all duration-300"
-              >
-                <span>📍 Church</span>
-                <span className="text-xs">→</span>
-              </a>
-              <a
-                href="https://www.google.com/maps/search/?api=1&query=St+Georges+Church+Mutholy+Auditorium"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-3 py-2 rounded-sm bg-primary text-ivory hover:bg-wine-deep font-sans-ui text-[11px] uppercase tracking-[0.2em] font-bold shadow-sm transition-all duration-300"
-              >
-                <span>📍 Reception</span>
-                <span className="text-xs">→</span>
-              </a>
             </div>
           </div>
 

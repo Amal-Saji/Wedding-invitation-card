@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const EVENT_ISO = "2026-09-12T09:00:00";
+const EVENT_ISO = "2026-10-22T10:30:00";
 
 function diff(target: Date) {
   const now = new Date();

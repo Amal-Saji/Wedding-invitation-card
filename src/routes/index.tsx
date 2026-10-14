@@ -9,25 +9,25 @@ import { RsvpForm } from "@/components/wedding/RsvpForm";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Baptism & Housewarming — Nathania Justin & Family" },
+      { title: "Wedding Invitation — Abin Benny & Rinu Vincent" },
       {
         name: "description",
         content:
-          "You are invited to the joyous celebration of the Baptism of Nathania Justin & Housewarming of Our New Home. Saturday, 12 September 2026, 9 AM at St George Cathedral Church, Kothamangalam.",
+          "Mr. Benny Mathew & Mrs. Elsamma Benny cordially invite your esteemed presence and prayerful blessings on the auspicious occasion of the wedding of their beloved son Abin Benny with Rinu Vincent on Thursday, 22 October 2026.",
       },
-      { property: "og:title", content: "Baptism of Nathania Justin & Housewarming of Our New Home" },
+      { property: "og:title", content: "Wedding Invitation — Abin Benny & Rinu Vincent" },
       {
         property: "og:description",
-        content: "Join us as we celebrate these two beautiful blessings on Saturday, 12 September 2026 at St George Cathedral Church, Kothamangalam.",
+        content: "“Therefore what God has joined together, let no one separate.” — Matthew 19:6 | Wedding of Abin Benny & Rinu Vincent",
       },
       { property: "og:type", content: "website" },
-      { property: "og:image", content: "https://nathaniajustin.vercel.app/images/og-preview.jpg" },
-      { property: "og:image:secure_url", content: "https://nathaniajustin.vercel.app/images/og-preview.jpg" },
+      { property: "og:image", content: "/images/og-preview.jpg" },
+      { property: "og:image:secure_url", content: "/images/og-preview.jpg" },
       { property: "og:image:type", content: "image/jpeg" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Baptism of Nathania Justin & Housewarming of Our New Home" },
-      { name: "twitter:description", content: "Join us as we celebrate these two beautiful blessings on Saturday, 12 September 2026 at St George Cathedral Church, Kothamangalam." },
-      { name: "twitter:image", content: "https://nathaniajustin.vercel.app/images/og-preview.jpg" },
+      { name: "twitter:title", content: "Wedding Invitation — Abin Benny & Rinu Vincent" },
+      { name: "twitter:description", content: "“Therefore what God has joined together, let no one separate.” — Matthew 19:6 | Wedding of Abin Benny & Rinu Vincent" },
+      { name: "twitter:image", content: "/images/og-preview.jpg" },
     ],
     links: [
       {
@@ -40,11 +40,11 @@ export const Route = createFileRoute("/")({
 });
 
 const galleryImgs = [
-  { src: "/images/img5.jpg", alt: "Nathania Justin — Holy Baptism Blessing", cls: "col-span-2 row-span-2" },
-  { src: "/images/img1.jpg", alt: "Our New Home — Housewarming Blessing", cls: "col-span-1 row-span-1" },
-  { src: "/images/img2.jpg", alt: "Darling Nathania Justin", cls: "col-span-1 row-span-1" },
-  { src: "/images/img3.jpg", alt: "Precious Moments", cls: "col-span-1 row-span-1" },
-  { src: "/images/img4.jpg", alt: "God's Little Blessing", cls: "col-span-1 row-span-1" },
+  { src: "/images/wedding-invitation-card.png", alt: "Official Wedding Invitation Card", cls: "col-span-2 row-span-2" },
+  { src: "/images/gallery-1.jpg", alt: "Abin & Rinu — In Holy Matrimony", cls: "col-span-1 row-span-1" },
+  { src: "/images/gallery-2.jpg", alt: "Cherished Moments", cls: "col-span-1 row-span-1" },
+  { src: "/images/gallery-3.jpg", alt: "Bound by Love & Faith", cls: "col-span-1 row-span-1" },
+  { src: "/images/gallery-4.jpg", alt: "Forever Together", cls: "col-span-1 row-span-1" },
 ];
 
 function CelebrationApp() {
@@ -202,9 +202,10 @@ function CelebrationApp() {
       )}
       <HeroVideo />
       <WelcomeMessageSection onOpenLightbox={(idx) => setLightboxIndex(idx)} />
+      <EventsBreakdownSection />
       <CountdownSection />
       <Gallery onOpenLightbox={(idx) => setLightboxIndex(idx)} />
-      <Venue onOpenLightbox={() => setLightboxIndex(1)} />
+      <Venue onOpenLightbox={() => setLightboxIndex(0)} />
       <Footer />
 
       {/* Lightbox Modal */}
@@ -370,7 +371,7 @@ function HeroVideo() {
 
       <div className="relative z-10 mx-auto flex h-full max-w-4xl flex-col items-center justify-center px-4 sm:px-6 text-center text-ivory drop-shadow-[0_4px_12px_rgba(0,0,0,0.7)] py-10 sm:py-12 md:py-8">
         {/* Holy Cross */}
-        <div className="animate-fade-up flex items-center gap-3 text-sand mb-3 sm:mb-4 md:mb-2">
+        <div className="animate-fade-up flex items-center gap-3 text-sand mb-2 sm:mb-3">
           <span className="h-px w-8 sm:w-12 bg-sand/60" />
           <svg width="20" height="28" viewBox="0 0 24 32" fill="currentColor" className="drop-shadow-md">
             <path d="M10 0H14V9H23V13H14V32H10V13H1V9H10V0Z" />
@@ -378,49 +379,47 @@ function HeroVideo() {
           <span className="h-px w-8 sm:w-12 bg-sand/60" />
         </div>
 
-        <p className="animate-fade-up font-sans-ui text-[11px] sm:text-[13px] uppercase tracking-[0.45em] text-ivory/95 font-medium">
-          You are invited to the joyous celebration of
+        <p className="animate-fade-up font-body italic text-sm sm:text-base text-sand/95 max-w-md px-2">
+          “Therefore what God has joined together, let no one separate.”
+        </p>
+        <p className="animate-fade-up font-sans-ui text-[10px] sm:text-[11px] uppercase tracking-[0.4em] text-sand/80 font-semibold mb-2">
+          MATTHEW 19:6
         </p>
 
-        <div className="animate-fade-up mt-4 sm:mt-6 md:mt-3 flex flex-col items-center gap-1 sm:gap-2 md:gap-0.5" style={{ animationDelay: "0.2s" }}>
-          <h1 className="font-display text-4xl sm:text-6xl md:text-5xl lg:text-6xl uppercase tracking-[0.2em] text-ivory font-light drop-shadow-md">
-            Baptism
-          </h1>
-          <p className="font-sans-ui text-[11px] uppercase tracking-[0.35em] text-sand font-medium">
-            OF
-          </p>
-          <span className="font-script text-6xl sm:text-8xl md:text-7xl lg:text-8xl text-sand my-1 md:my-0 drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)] leading-tight">
-            Nathania Justin
+        <p className="animate-fade-up font-sans-ui text-[11px] sm:text-[13px] uppercase tracking-[0.45em] text-ivory/95 font-medium mt-1">
+          You are cordially invited to celebrate the wedding of
+        </p>
+
+        <div className="animate-fade-up mt-3 sm:mt-5 flex flex-col items-center gap-1 sm:gap-2" style={{ animationDelay: "0.2s" }}>
+          <span className="font-script text-5xl sm:text-7xl md:text-8xl text-sand drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)] leading-tight">
+            Abin Benny
           </span>
 
-          <div className="flex items-center justify-center gap-4 my-1 md:my-0 text-sand">
-            <span className="font-script text-4xl sm:text-5xl md:text-4xl text-sand font-bold">&amp;</span>
+          <div className="flex items-center justify-center gap-4 my-1 text-sand">
+            <span className="font-script text-3xl sm:text-4xl text-sand font-bold">&amp;</span>
           </div>
 
-          <h2 className="font-display text-3xl sm:text-5xl md:text-4xl lg:text-5xl uppercase tracking-[0.2em] text-ivory font-light drop-shadow-md">
-            Housewarming
-          </h2>
-          <p className="font-sans-ui text-[11px] uppercase tracking-[0.35em] text-sand font-medium">
-            OF OUR NEW HOME
-          </p>
+          <span className="font-script text-5xl sm:text-7xl md:text-8xl text-sand drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)] leading-tight">
+            Rinu Vincent
+          </span>
         </div>
 
-        <p className="animate-fade-up mt-5 sm:mt-6 md:mt-3 max-w-xl font-body text-base sm:text-lg md:text-base italic text-ivory/90 leading-relaxed" style={{ animationDelay: "0.4s" }}>
-          Please join us as we celebrate these two beautiful blessings on the same special day.
+        <p className="animate-fade-up mt-4 sm:mt-5 max-w-xl font-body text-sm sm:text-base md:text-lg italic text-ivory/90 leading-relaxed" style={{ animationDelay: "0.4s" }}>
+          As they unite their lives and hearts in holy matrimony by the grace of God.
         </p>
 
-        <div className="animate-fade-up mt-5 sm:mt-6 md:mt-3 flex flex-wrap items-center justify-center gap-3 sm:gap-6 font-sans-ui text-xs sm:text-sm uppercase tracking-[0.2em] text-sand" style={{ animationDelay: "0.6s" }}>
-          <span>Saturday, 12 September 2026</span>
+        <div className="animate-fade-up mt-4 sm:mt-5 flex flex-wrap items-center justify-center gap-2 sm:gap-4 font-sans-ui text-xs sm:text-sm uppercase tracking-[0.2em] text-sand" style={{ animationDelay: "0.6s" }}>
+          <span>Thursday, 22 October 2026</span>
           <span className="hidden sm:inline text-ivory/40">•</span>
-          <span>9 AM</span>
+          <span>10:30 AM</span>
           <span className="hidden sm:inline text-ivory/40">•</span>
-          <span>St George Cathedral Church, Kothamangalam</span>
+          <span>St. Mary's Church, Mevada, Pala</span>
         </div>
 
         {/* Premium Gold Glassmorphic Location Button */}
         <a
-          href="#venue"
-          className="animate-fade-up mt-6 sm:mt-8 md:mt-5 inline-flex items-center gap-3 rounded-full border border-sand/50 bg-black/40 backdrop-blur-md px-8 sm:px-10 py-3.5 sm:py-4 font-sans-ui text-xs sm:text-xs uppercase tracking-[0.35em] text-sand shadow-[0_6px_24px_rgba(0,0,0,0.5)] transition-all duration-300 hover:scale-105 hover:bg-sand hover:text-wine-deep hover:border-sand hover:shadow-[0_8px_30px_rgba(212,175,55,0.45)] cursor-pointer group"
+          href="#events"
+          className="animate-fade-up mt-6 sm:mt-8 md:mt-6 inline-flex items-center gap-3 rounded-full border border-sand/50 bg-black/40 backdrop-blur-md px-8 sm:px-10 py-3.5 sm:py-4 font-sans-ui text-xs uppercase tracking-[0.35em] text-sand shadow-[0_6px_24px_rgba(0,0,0,0.5)] transition-all duration-300 hover:scale-105 hover:bg-sand hover:text-wine-deep hover:border-sand hover:shadow-[0_8px_30px_rgba(212,175,55,0.45)] cursor-pointer group"
           style={{ animationDelay: "0.8s" }}
         >
           <svg
@@ -437,7 +436,7 @@ function HeroVideo() {
             <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
             <circle cx="12" cy="10" r="3" />
           </svg>
-          <span className="font-semibold">View Event Locations</span>
+          <span className="font-semibold">View Events &amp; Locations</span>
         </a>
       </div>
 
@@ -453,54 +452,27 @@ function HeroVideo() {
 
 function WelcomeMessageSection({ onOpenLightbox }: { onOpenLightbox: (index: number) => void }) {
   return (
-    <section className="relative bg-background py-24 px-6 flex items-center justify-center">
+    <section className="relative bg-background py-20 sm:py-24 px-6 flex items-center justify-center">
       <div className="relative z-10 mx-auto w-full max-w-5xl rounded-sm border border-primary/20 bg-ivory p-8 sm:p-14 shadow-[var(--shadow-frame)] text-foreground">
-        <div className="text-center mb-10">
-          <Ornament label="With Praise & Gratitude" />
-          <h2 className="mt-4 font-display text-4xl sm:text-5xl text-primary font-semibold">
-            Two Blessings, One Memorable Day
-          </h2>
-          <p className="mt-4 font-body text-lg italic text-foreground/80 leading-relaxed max-w-2xl mx-auto">
-            "Every good and perfect gift is from above." With joyful hearts, we request the honour of your presence as we celebrate the Holy Baptism of our darling daughter <strong>Nathania Justin</strong> and step into <strong>Our New Home</strong> with prayers and thanksgiving.
+        
+        {/* Holy Scripture Top */}
+        <div className="text-center mb-6">
+          <div className="flex items-center justify-center gap-3 text-primary/70 mb-3">
+            <span className="h-px w-8 sm:w-12 bg-primary/30" />
+            <svg width="18" height="24" viewBox="0 0 24 32" fill="currentColor">
+              <path d="M10 0H14V9H23V13H14V32H10V13H1V9H10V0Z" />
+            </svg>
+            <span className="h-px w-8 sm:w-12 bg-primary/30" />
+          </div>
+          <p className="font-body text-xl sm:text-2xl italic text-primary leading-relaxed max-w-2xl mx-auto font-medium">
+            “Therefore what God has joined together, let no one separate.”
+          </p>
+          <p className="mt-1 font-sans-ui text-xs uppercase tracking-[0.35em] text-primary/75 font-bold">
+            MATTHEW 19:6
           </p>
         </div>
 
-        {/* Featured Dual Spotlight: Main Baby Photo & House Photo */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center max-w-4xl mx-auto">
-          {/* Main Baby Photo (IMG_1421.JPG.jpeg / index 0) */}
-          <div
-            onClick={() => onOpenLightbox(0)}
-            className="group relative overflow-hidden rounded-sm border-2 border-primary/30 shadow-lg aspect-[3/4] w-full cursor-pointer"
-          >
-            <img
-              src="/images/img5.jpg"
-              alt="Nathania Justin"
-              className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
-            />
-            <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-4 text-white text-center">
-              <p className="font-script text-3xl text-sand">Nathania Justin</p>
-              <p className="font-sans-ui text-[10px] uppercase tracking-[0.3em] text-sand/80">Holy Baptism Blessing</p>
-            </div>
-          </div>
-
-          {/* Main House Photo (IMG_1417.JPG.jpeg / index 1) */}
-          <div
-            onClick={() => onOpenLightbox(1)}
-            className="group relative overflow-hidden rounded-sm border-2 border-primary/30 shadow-lg aspect-[3/4] w-full cursor-pointer"
-          >
-            <img
-              src="/images/img1.jpg"
-              alt="Our New Home"
-              className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
-            />
-            <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/75 via-black/30 to-transparent p-4 text-white text-center">
-              <p className="font-display text-2xl text-sand">Our New Home</p>
-              <p className="font-sans-ui text-[10px] uppercase tracking-[0.3em] text-sand/80">Housewarming & Blessing</p>
-            </div>
-          </div>
-        </div>
-
-        <div className="mt-10 ornament-divider text-primary">
+        <div className="ornament-divider text-primary my-8">
           <span className="ornament-line" />
           <svg width="18" height="18" viewBox="0 0 32 32" fill="currentColor">
             <circle cx="16" cy="16" r="2" />
@@ -508,14 +480,233 @@ function WelcomeMessageSection({ onOpenLightbox }: { onOpenLightbox: (index: num
           <span className="ornament-line" />
         </div>
 
-        <div className="text-center mt-6">
-          <p className="font-script text-3xl sm:text-4xl text-primary leading-relaxed">
-            "As for me and my house, we will serve the Lord."
+        {/* Parents' Cordial Invitation */}
+        <div className="text-center max-w-3xl mx-auto space-y-3">
+          <p className="font-display text-2xl sm:text-3xl text-primary font-semibold tracking-wide">
+            MR. BENNY MATHEW &amp; MRS. ELSAMMA BENNY
           </p>
-          <p className="mt-2 font-sans-ui text-xs uppercase tracking-[0.3em] text-primary/70 font-semibold">
-            — Joshua 24:15
+          <p className="font-sans-ui text-xs sm:text-sm uppercase tracking-[0.3em] text-foreground/75 font-medium">
+            Pulickal House, Mevada, Pala
+          </p>
+          
+          <p className="font-body text-base sm:text-lg italic text-foreground/80 leading-relaxed pt-2">
+            Cordially invite your esteemed presence and prayerful blessings on the auspicious occasion of the wedding of their beloved son
           </p>
         </div>
+
+        {/* Couple Spotlight Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center max-w-4xl mx-auto mt-10">
+          
+          {/* Groom Card */}
+          <div className="rounded-sm border border-primary/25 bg-secondary/30 p-8 text-center shadow-[var(--shadow-soft)]">
+            <span className="font-sans-ui text-[10px] uppercase tracking-[0.4em] text-primary/70 font-semibold block mb-2">
+              The Groom
+            </span>
+            <h3 className="font-script text-4xl sm:text-5xl text-primary font-bold">
+              Abin Benny
+            </h3>
+            <div className="mt-4 pt-4 border-t border-primary/15 text-foreground/80 font-body text-sm sm:text-base leading-relaxed">
+              <p>Son of Mr. Benny Mathew &amp; Mrs. Elsamma Benny</p>
+              <p className="font-sans-ui text-xs uppercase tracking-wider text-primary/70 mt-1">
+                Pulickal House, Mevada, Pala
+              </p>
+            </div>
+          </div>
+
+          {/* Bride Card */}
+          <div className="rounded-sm border border-primary/25 bg-secondary/30 p-8 text-center shadow-[var(--shadow-soft)]">
+            <span className="font-sans-ui text-[10px] uppercase tracking-[0.4em] text-primary/70 font-semibold block mb-2">
+              The Bride
+            </span>
+            <h3 className="font-script text-4xl sm:text-5xl text-primary font-bold">
+              Rinu Vincent
+            </h3>
+            <div className="mt-4 pt-4 border-t border-primary/15 text-foreground/80 font-body text-sm sm:text-base leading-relaxed">
+              <p>Daughter of Mr. Vincent P. Paul &amp; Mrs. Sily Vincent</p>
+              <p className="font-sans-ui text-xs uppercase tracking-wider text-primary/70 mt-1">
+                Pulikkalayil House, Madakkathaanam, Ernakulam
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+        {/* Official Card Preview Thumbnail */}
+        <div className="mt-12 text-center">
+          <p className="font-sans-ui text-xs uppercase tracking-[0.3em] text-foreground/75 mb-4">
+            Which, by the grace of the Lord, will be solemnised
+          </p>
+          <div
+            onClick={() => onOpenLightbox(0)}
+            className="group relative max-w-sm mx-auto overflow-hidden rounded-sm border-2 border-primary/30 shadow-lg cursor-pointer bg-white transition-all duration-300 hover:shadow-2xl hover:scale-[1.02]"
+          >
+            <img
+              src="/images/wedding-invitation-card.png"
+              alt="Official Wedding Invitation Card"
+              className="w-full h-auto object-cover"
+            />
+            <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white font-sans-ui text-xs uppercase tracking-widest gap-2">
+              <span>🔍 Click to View Full Invitation Card</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  );
+}
+
+function EventsBreakdownSection() {
+  return (
+    <section id="events" className="relative bg-secondary py-20 px-6">
+      <div className="mx-auto max-w-5xl">
+        <div className="text-center mb-14">
+          <Ornament label="Sacred Occasions" />
+          <h2 className="font-display text-4xl sm:text-6xl text-primary font-semibold">
+            Programme &amp; Celebrations
+          </h2>
+          <p className="mt-4 font-body text-lg italic text-foreground/75 max-w-xl mx-auto">
+            We look forward to celebrating these joyous moments together with your prayers and presence.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          
+          {/* Engagement Card */}
+          <div className="relative rounded-sm border border-primary/25 bg-ivory p-8 sm:p-10 shadow-[var(--shadow-frame)] flex flex-col justify-between">
+            <span className="absolute top-0 inset-x-8 h-1 bg-gradient-to-r from-sand via-primary to-sand" />
+            <div>
+              <div className="flex items-center justify-between gap-4 border-b border-primary/15 pb-4 mb-6">
+                <div>
+                  <span className="text-xs font-sans-ui uppercase tracking-[0.4em] text-primary/70 font-bold">
+                    Solemn Occasion
+                  </span>
+                  <h3 className="font-display text-3xl sm:text-4xl text-primary font-bold mt-1">
+                    Engagement
+                  </h3>
+                </div>
+                <div className="w-12 h-12 rounded-full bg-secondary flex items-center justify-center text-2xl border border-primary/20">
+                  💍
+                </div>
+              </div>
+
+              <div className="space-y-4 text-foreground/85">
+                <div className="flex items-start gap-3">
+                  <span className="text-primary font-semibold min-w-20 font-sans-ui text-xs uppercase tracking-wider">Date:</span>
+                  <span className="font-body text-base font-medium">Monday, 19 October 2026</span>
+                </div>
+
+                <div className="flex items-start gap-3">
+                  <span className="text-primary font-semibold min-w-20 font-sans-ui text-xs uppercase tracking-wider">Time:</span>
+                  <span className="font-body text-base font-medium">11:45 AM</span>
+                </div>
+
+                <div className="flex items-start gap-3">
+                  <span className="text-primary font-semibold min-w-20 font-sans-ui text-xs uppercase tracking-wider">Venue:</span>
+                  <div>
+                    <p className="font-body text-base font-semibold text-primary">Vimala Matha Church, Kadalikkad</p>
+                    <p className="font-sans-ui text-xs text-foreground/65 mt-0.5">Kadalikkad, Muvattupuzha, Kerala</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3">
+                  <span className="text-primary font-semibold min-w-20 font-sans-ui text-xs uppercase tracking-wider">Reception:</span>
+                  <span className="font-body text-base">Parish Auditorium (Following Ceremony)</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-8 pt-6 border-t border-primary/15">
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=Vimala+Matha+Church+Kadalikkad"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 font-sans-ui text-[11px] uppercase tracking-[0.35em] text-primary font-bold hover:opacity-75 transition-opacity"
+              >
+                📍 Open Location in Maps →
+              </a>
+            </div>
+          </div>
+
+          {/* Wedding Card */}
+          <div className="relative rounded-sm border-2 border-primary/40 bg-ivory p-8 sm:p-10 shadow-[var(--shadow-frame)] flex flex-col justify-between">
+            <span className="absolute top-0 inset-x-8 h-1 bg-gradient-to-r from-wine via-sand to-wine" />
+            <div>
+              <div className="flex items-center justify-between gap-4 border-b border-primary/15 pb-4 mb-6">
+                <div>
+                  <span className="text-xs font-sans-ui uppercase tracking-[0.4em] text-wine font-bold">
+                    Holy Matrimony
+                  </span>
+                  <h3 className="font-display text-3xl sm:text-4xl text-primary font-bold mt-1">
+                    Wedding
+                  </h3>
+                </div>
+                <div className="w-12 h-12 rounded-full bg-primary text-sand flex items-center justify-center text-2xl shadow-md">
+                  💒
+                </div>
+              </div>
+
+              <div className="space-y-4 text-foreground/85">
+                <div className="flex items-start gap-3">
+                  <span className="text-primary font-semibold min-w-20 font-sans-ui text-xs uppercase tracking-wider">Date:</span>
+                  <span className="font-body text-base font-medium">Thursday, 22 October 2026</span>
+                </div>
+
+                <div className="flex items-start gap-3">
+                  <span className="text-primary font-semibold min-w-20 font-sans-ui text-xs uppercase tracking-wider">Time:</span>
+                  <span className="font-body text-base font-medium">10:30 AM</span>
+                </div>
+
+                <div className="flex items-start gap-3">
+                  <span className="text-primary font-semibold min-w-20 font-sans-ui text-xs uppercase tracking-wider">Venue:</span>
+                  <div>
+                    <p className="font-body text-base font-semibold text-primary">St. Mary's Church, Mevada, Pala</p>
+                    <p className="font-sans-ui text-xs text-foreground/65 mt-0.5">Mevada, Pala, Kottayam, Kerala</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3">
+                  <span className="text-primary font-semibold min-w-20 font-sans-ui text-xs uppercase tracking-wider">Reception:</span>
+                  <div>
+                    <p className="font-body text-base font-semibold text-primary">St. George's Church Mutholy Auditorium</p>
+                    <p className="font-sans-ui text-xs text-foreground/65 mt-0.5">Mutholy, Pala, Kottayam, Kerala</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-8 pt-6 border-t border-primary/15 flex flex-wrap gap-4 justify-between items-center">
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=St+Marys+Church+Mevada+Pala"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 font-sans-ui text-[11px] uppercase tracking-[0.35em] text-primary font-bold hover:opacity-75 transition-opacity"
+              >
+                📍 Church Location →
+              </a>
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=St+Georges+Church+Mutholy+Auditorium"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 font-sans-ui text-[11px] uppercase tracking-[0.35em] text-wine font-bold hover:opacity-75 transition-opacity"
+              >
+                📍 Reception Location →
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+        {/* Compliments Section */}
+        <div className="mt-14 text-center">
+          <p className="font-body italic text-base sm:text-lg text-foreground/75">
+            With best compliments from
+          </p>
+          <p className="font-display text-2xl sm:text-3xl text-primary font-semibold mt-1 tracking-wide">
+            Bibin Benny
+          </p>
+        </div>
+
       </div>
     </section>
   );
@@ -526,20 +717,20 @@ function WelcomeMessageSection({ onOpenLightbox }: { onOpenLightbox: (index: num
 function EventCalendar() {
   const daysOfWeek = ["S", "M", "T", "W", "T", "F", "S"];
   
-  // September 2026 starts on Tuesday (index 2)
+  // October 2026 starts on Thursday (index 4)
   const calendarCells = [
-    null, null, // Sun, Mon
-    1, 2, 3, 4, 5,
-    6, 7, 8, 9, 10, 11, 12, // 12 is Saturday (Event day)
-    13, 14, 15, 16, 17, 18, 19,
-    20, 21, 22, 23, 24, 25, 26,
-    27, 28, 29, 30
+    null, null, null, null, // Sun, Mon, Tue, Wed
+    1, 2, 3,
+    4, 5, 6, 7, 8, 9, 10,
+    11, 12, 13, 14, 15, 16, 17,
+    18, 19, 20, 21, 22, 23, 24, // 19 is Engagement (Mon), 22 is Wedding (Thu)
+    25, 26, 27, 28, 29, 30, 31
   ];
 
   return (
     <div className="w-[300px] sm:w-[340px] bg-ivory text-primary p-6 sm:p-8 rounded-sm shadow-[var(--shadow-frame)] border border-sand/30 flex flex-col items-center select-none">
       <h3 className="font-script text-4xl sm:text-5xl text-primary mb-4">
-        September 2026
+        October 2026
       </h3>
       
       <div className="grid grid-cols-7 gap-2 w-full text-center border-b border-primary/20 pb-2 mb-2">
@@ -556,14 +747,26 @@ function EventCalendar() {
             return <div key={idx} className="aspect-square" />;
           }
           
-          if (day === 12) {
+          if (day === 19) {
             return (
-              <div key={idx} className="relative flex items-center justify-center aspect-square">
+              <div key={idx} className="relative flex items-center justify-center aspect-square" title="Engagement · 19 Oct 2026">
+                <div className="absolute inset-0.5 rounded-full border-2 border-primary bg-sand/30 flex items-center justify-center shadow-sm">
+                  <span className="relative z-10 text-primary font-sans-ui text-[12px] sm:text-[14px] font-bold">
+                    19
+                  </span>
+                </div>
+              </div>
+            );
+          }
+
+          if (day === 22) {
+            return (
+              <div key={idx} className="relative flex items-center justify-center aspect-square" title="Wedding · 22 Oct 2026">
                 <svg className="absolute w-[34px] h-[34px] sm:w-[38px] sm:h-[38px] text-wine fill-current drop-shadow-sm animate-pulse" viewBox="0 0 24 24">
                   <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
                 </svg>
                 <span className="relative z-10 text-white font-sans-ui text-[12px] sm:text-[14px] font-bold">
-                  12
+                  22
                 </span>
               </div>
             );
@@ -575,6 +778,15 @@ function EventCalendar() {
             </div>
           );
         })}
+      </div>
+
+      <div className="mt-4 pt-3 border-t border-primary/15 flex items-center justify-center gap-4 text-[10px] sm:text-xs font-sans-ui uppercase tracking-wider text-primary/80">
+        <span className="flex items-center gap-1">
+          <span className="h-2 w-2 rounded-full border border-primary bg-sand/40" /> 19: Engagement
+        </span>
+        <span className="flex items-center gap-1">
+          <span className="h-2 w-2 rounded-full bg-wine" /> 22: Wedding
+        </span>
       </div>
     </div>
   );
@@ -614,16 +826,14 @@ function CountdownSection() {
   );
 }
 
-
-
 function Gallery({ onOpenLightbox }: { onOpenLightbox: (index: number) => void }) {
   return (
     <section id="gallery" className="bg-secondary py-24">
       <div className="mx-auto max-w-6xl px-6 text-center">
-        <Ornament label="Memories & Our Home" />
+        <Ornament label="Love &amp; Togetherness" />
         <h2 className="font-display text-5xl text-primary sm:text-6xl">Photo Gallery</h2>
         <p className="mx-auto mt-4 max-w-md font-body italic text-foreground/75">
-          Glimpses of our new home and family moments.
+          Glimpses of love, joy, and cherished celebrations.
         </p>
       </div>
       <div className="mx-auto mt-14 grid max-w-6xl grid-cols-2 md:grid-cols-4 gap-4 px-6 auto-rows-[200px] sm:auto-rows-[250px]">
@@ -656,29 +866,46 @@ function Venue({ onOpenLightbox }: { onOpenLightbox: (index: number) => void }) 
         <div className="text-center">
           <Ornament label="Locations" />
           <h2 className="font-display text-5xl text-primary sm:text-6xl">Event Venues</h2>
+          <p className="mx-auto mt-4 max-w-md font-body italic text-foreground/75">
+            Directions and venue guides for our wedding celebrations.
+          </p>
         </div>
 
-        <div className="mt-16 grid gap-10 lg:grid-cols-2">
-          {/* Main House Photo with Clickable Lightbox */}
+        <div className="mt-16 grid gap-10 lg:grid-cols-2 items-center">
+          {/* Main Wedding Invitation Card Preview */}
           <div
-            onClick={() => onOpenLightbox(1)}
-            className="group relative overflow-hidden rounded-sm border border-primary/20 shadow-[var(--shadow-frame)] h-80 sm:h-auto cursor-pointer"
+            onClick={() => onOpenLightbox(0)}
+            className="group relative overflow-hidden rounded-sm border-2 border-primary/20 shadow-[var(--shadow-frame)] cursor-pointer bg-white"
           >
-            <img src="/images/img1.jpg" alt="Our New Home" loading="lazy" className="h-full w-full object-cover transition duration-700 group-hover:scale-105" />
+            <img
+              src="/images/wedding-invitation-card.png"
+              alt="Official Wedding Invitation Card"
+              loading="lazy"
+              className="w-full h-auto object-cover transition duration-700 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white font-sans-ui text-xs uppercase tracking-widest gap-2">
+              <span>🔍 Click to View Full Card</span>
+            </div>
           </div>
 
-          <div className="flex flex-col justify-center gap-8">
+          <div className="flex flex-col justify-center gap-6">
             <VenueCard
-              title="St. George Cathedral Church"
-              subtitle="Holy Baptism Ceremony · 9:00 AM"
-              address="Kothamangalam, Ernakulam, Kerala"
-              maps="https://maps.app.goo.gl/T9LWqPHC91TW5ba56?g_st=iw"
+              title="St. Mary's Church, Mevada, Pala"
+              subtitle="Holy Matrimony · Thu, 22 Oct 2026 · 10:30 AM"
+              address="Mevada, Pala, Kottayam, Kerala"
+              maps="https://www.google.com/maps/search/?api=1&query=St+Marys+Church+Mevada+Pala"
             />
             <VenueCard
-              title="Our New Home"
-              subtitle="Housewarming & Lunch · 11:00 AM onwards"
-              address="Kothamangalam, Ernakulam, Kerala"
-              maps="https://maps.app.goo.gl/Vr5qRjAedRfjogyq8"
+              title="St. George's Church Mutholy Auditorium"
+              subtitle="Wedding Reception & Lunch · Thu, 22 Oct 2026"
+              address="Mutholy, Pala, Kottayam, Kerala"
+              maps="https://www.google.com/maps/search/?api=1&query=St+Georges+Church+Mutholy+Auditorium"
+            />
+            <VenueCard
+              title="Vimala Matha Church, Kadalikkad"
+              subtitle="Engagement Ceremony & Reception · Mon, 19 Oct 2026 · 11:45 AM"
+              address="Kadalikkad, Muvattupuzha (Reception at Parish Auditorium)"
+              maps="https://www.google.com/maps/search/?api=1&query=Vimala+Matha+Church+Kadalikkad"
             />
           </div>
         </div>
@@ -691,26 +918,23 @@ function VenueCard({
   title, subtitle, address, maps,
 }: { title: string; subtitle: string; address: string; maps: string }) {
   return (
-    <article className="relative rounded-sm border border-primary/25 bg-ivory p-8 backdrop-blur-sm shadow-[var(--shadow-soft)]">
+    <article className="relative rounded-sm border border-primary/25 bg-ivory p-6 sm:p-8 backdrop-blur-sm shadow-[var(--shadow-soft)]">
       <p className="font-sans-ui text-xs uppercase tracking-[0.3em] font-bold text-primary/70">
         {subtitle}
       </p>
-      <h3 className="mt-2 font-display text-3xl text-primary font-semibold">{title}</h3>
-      <p className="mt-3 font-body text-lg italic text-foreground/75">{address}</p>
+      <h3 className="mt-2 font-display text-2xl sm:text-3xl text-primary font-semibold">{title}</h3>
+      <p className="mt-2 font-body text-base italic text-foreground/75">{address}</p>
       <a
         href={maps}
         target="_blank"
         rel="noopener noreferrer"
-        className="mt-6 inline-flex items-center gap-2 border-b border-primary pb-1 font-sans-ui text-[11px] uppercase tracking-[0.35em] text-primary font-semibold transition hover:opacity-75"
+        className="mt-4 inline-flex items-center gap-2 border-b border-primary pb-1 font-sans-ui text-[11px] uppercase tracking-[0.35em] text-primary font-semibold transition hover:opacity-75"
       >
         Open in Maps →
       </a>
     </article>
   );
 }
-
-
-
 
 function Footer() {
   const whatsappUrl =
@@ -722,22 +946,29 @@ function Footer() {
   return (
     <footer className="bg-primary py-16 text-center text-primary-foreground border-t border-sand/20">
       <p className="font-display text-3xl uppercase tracking-widest text-sand">
-        Baptism &amp; Housewarming
+        Wedding Celebration
       </p>
-      <p className="mt-2 font-script text-5xl text-sand">
-        Nathania Justin &amp; Family
+      <p className="mt-2 font-script text-5xl sm:text-6xl text-sand">
+        Abin Benny &amp; Rinu Vincent
       </p>
-      <p className="mt-4 font-sans-ui text-[12px] uppercase tracking-[0.5em] text-primary-foreground/80">
-        12 · 09 · 2026
-      </p>
+      <div className="mt-3 flex items-center justify-center gap-3 font-sans-ui text-[12px] uppercase tracking-[0.4em] text-primary-foreground/80">
+        <span>19 · 10 · 2026</span>
+        <span>•</span>
+        <span>22 · 10 · 2026</span>
+      </div>
       <div className="ornament-divider mt-6 text-primary-foreground">
         <span className="ornament-line" style={{ background: "linear-gradient(90deg, transparent, currentColor, transparent)" }} />
         <svg width="20" height="20" viewBox="0 0 32 32" fill="currentColor"><circle cx="16" cy="16" r="2" /></svg>
         <span className="ornament-line" style={{ background: "linear-gradient(90deg, transparent, currentColor, transparent)" }} />
       </div>
       <p className="mt-6 font-script text-2xl sm:text-3xl text-sand/90 px-4 max-w-xl mx-auto">
-        "Your love, blessings and presence will make this day even more special."
+        “Therefore what God has joined together, let no one separate.”
       </p>
+      <div className="mt-4">
+        <p className="font-body text-sm sm:text-base italic text-primary-foreground/85">
+          With best compliments from <strong className="font-semibold text-sand">Bibin Benny</strong>
+        </p>
+      </div>
 
       {/* GRANDPIX Branding & WhatsApp Direct Inquiry Link */}
       <div className="mt-14 pt-8 border-t border-sand/15 flex flex-col items-center justify-center">

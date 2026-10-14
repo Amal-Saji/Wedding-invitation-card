@@ -742,11 +742,12 @@ function EventCalendar() {
           if (day === 19) {
             return (
               <div key={idx} className="relative flex items-center justify-center aspect-square" title="Engagement · 19 Oct 2026">
-                <div className="absolute inset-0.5 rounded-full border-2 border-primary bg-sand/30 flex items-center justify-center shadow-sm">
-                  <span className="relative z-10 text-primary font-sans-ui text-[12px] sm:text-[14px] font-bold">
-                    19
-                  </span>
-                </div>
+                <svg className="absolute w-[34px] h-[34px] sm:w-[38px] sm:h-[38px] text-[#C59B27] fill-current drop-shadow-sm animate-pulse" viewBox="0 0 24 24">
+                  <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                </svg>
+                <span className="relative z-10 text-white font-sans-ui text-[12px] sm:text-[14px] font-bold">
+                  19
+                </span>
               </div>
             );
           }
@@ -772,12 +773,18 @@ function EventCalendar() {
         })}
       </div>
 
-      <div className="mt-4 pt-3 border-t border-primary/15 flex items-center justify-center gap-4 text-[10px] sm:text-xs font-sans-ui uppercase tracking-wider text-primary/80">
-        <span className="flex items-center gap-1">
-          <span className="h-2 w-2 rounded-full border border-primary bg-sand/40" /> 19: Engagement
+      <div className="mt-4 pt-3 border-t border-primary/15 flex items-center justify-center gap-5 text-[10px] sm:text-xs font-sans-ui uppercase tracking-wider text-primary/80">
+        <span className="flex items-center gap-1.5 font-medium">
+          <svg className="w-3.5 h-3.5 text-[#C59B27] fill-current" viewBox="0 0 24 24">
+            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+          </svg>
+          19: Engagement
         </span>
-        <span className="flex items-center gap-1">
-          <span className="h-2 w-2 rounded-full bg-wine" /> 22: Wedding
+        <span className="flex items-center gap-1.5 font-medium">
+          <svg className="w-3.5 h-3.5 text-wine fill-current" viewBox="0 0 24 24">
+            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+          </svg>
+          22: Wedding
         </span>
       </div>
     </div>

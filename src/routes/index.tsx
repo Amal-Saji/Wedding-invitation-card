@@ -44,14 +44,13 @@ const galleryImgs = [
   { src: "/images/wedding-02.jpg", alt: "A Sacred Promise", cls: "col-span-1 row-span-1" },
   { src: "/images/wedding-03.jpg", alt: "Two Hearts United", cls: "col-span-1 row-span-1" },
   { src: "/images/wedding-04.jpg", alt: "Cherished Moments", cls: "col-span-1 row-span-1" },
-  { src: "/images/wedding-05.jpg", alt: "Laughter & Grace", cls: "col-span-1 row-span-1" },
   { src: "/images/wedding-06.jpg", alt: "Joyful Beginnings", cls: "col-span-1 row-span-1" },
   { src: "/images/wedding-07.jpg", alt: "Forever & Always", cls: "col-span-1 row-span-1" },
+  { src: "/images/wedding-12.jpg", alt: "Endless Happiness", cls: "col-span-1 row-span-1" },
   { src: "/images/wedding-08.jpg", alt: "Blessed by Love", cls: "col-span-2 row-span-2" },
   { src: "/images/wedding-11.jpg", alt: "Together in Every Step", cls: "col-span-2 row-span-1" },
-  { src: "/images/wedding-12.jpg", alt: "Endless Happiness", cls: "col-span-1 row-span-1" },
-  { src: "/images/wedding-14.jpg", alt: "Grace & Radiance", cls: "col-span-1 row-span-1" },
-  { src: "/images/wedding-15.jpg", alt: "A Celebration of Love", cls: "col-span-2 row-span-1" },
+  { src: "/images/wedding-14.jpg", alt: "Grace & Radiance", cls: "col-span-2 row-span-2" },
+  { src: "/images/wedding-15.jpg", alt: "A Celebration of Love", cls: "col-span-2 row-span-2" },
 ];
 
 function CelebrationApp() {

@@ -39,18 +39,18 @@ export const Route = createFileRoute("/")({
   component: CelebrationApp,
 });
 
-const galleryImgs = [
-  { src: "/images/wedding-01.jpg", alt: "Abin & Rinu — In Holy Matrimony", cls: "col-span-2 row-span-2" },
-  { src: "/images/wedding-02.jpg", alt: "A Sacred Promise", cls: "col-span-1 row-span-1" },
-  { src: "/images/wedding-03.jpg", alt: "Two Hearts United", cls: "col-span-1 row-span-1" },
-  { src: "/images/wedding-04.jpg", alt: "Cherished Moments", cls: "col-span-1 row-span-1" },
-  { src: "/images/wedding-06.jpg", alt: "Joyful Beginnings", cls: "col-span-1 row-span-1" },
-  { src: "/images/wedding-07.jpg", alt: "Forever & Always", cls: "col-span-1 row-span-1" },
-  { src: "/images/wedding-12.jpg", alt: "Endless Happiness", cls: "col-span-1 row-span-1" },
-  { src: "/images/wedding-08.jpg", alt: "Blessed by Love", cls: "col-span-2 row-span-2" },
-  { src: "/images/wedding-11.jpg", alt: "Together in Every Step", cls: "col-span-2 row-span-1" },
-  { src: "/images/wedding-14.jpg", alt: "Grace & Radiance", cls: "col-span-2 row-span-2" },
-  { src: "/images/wedding-15.jpg", alt: "A Celebration of Love", cls: "col-span-2 row-span-2" },
+const galleryImgs: { src: string; alt: string; cls: string; pos?: string }[] = [
+  { src: "/images/wedding-01.jpg", alt: "Abin & Rinu — In Holy Matrimony", cls: "col-span-2 row-span-2", pos: "object-[center_60%]" },
+  { src: "/images/wedding-02.jpg", alt: "A Sacred Promise", cls: "col-span-1 row-span-1", pos: "object-[center_65%]" },
+  { src: "/images/wedding-03.jpg", alt: "Two Hearts United", cls: "col-span-1 row-span-1", pos: "object-[center_55%]" },
+  { src: "/images/wedding-04.jpg", alt: "Cherished Moments", cls: "col-span-1 row-span-1", pos: "object-[center_50%]" },
+  { src: "/images/wedding-06.jpg", alt: "Joyful Beginnings", cls: "col-span-1 row-span-1", pos: "object-[center_35%]" },
+  { src: "/images/wedding-07.jpg", alt: "Forever & Always", cls: "col-span-1 row-span-1", pos: "object-center" },
+  { src: "/images/wedding-12.jpg", alt: "Endless Happiness", cls: "col-span-1 row-span-1", pos: "object-[center_55%]" },
+  { src: "/images/wedding-08.jpg", alt: "Blessed by Love", cls: "col-span-2 row-span-2", pos: "object-[center_65%]" },
+  { src: "/images/wedding-11.jpg", alt: "Together in Every Step", cls: "col-span-2 row-span-1", pos: "object-center" },
+  { src: "/images/wedding-14.jpg", alt: "Grace & Radiance", cls: "col-span-2 md:col-span-2 row-span-2", pos: "object-[center_55%]" },
+  { src: "/images/wedding-15.jpg", alt: "A Celebration of Love", cls: "col-span-2 md:col-span-4 row-span-2 min-h-[380px] sm:min-h-[560px]", pos: "object-[center_75%]" },
 ];
 
 function CelebrationApp() {
@@ -915,7 +915,7 @@ function Gallery({ onOpenLightbox }: { onOpenLightbox: (index: number) => void }
               src={g.src}
               alt={g.alt}
               loading="lazy"
-              className="h-full w-full object-cover object-top transition duration-700 group-hover:scale-105"
+              className={`h-full w-full object-cover transition duration-700 group-hover:scale-105 ${g.pos || "object-center"}`}
             />
             {/* Subtle Zoom Pill on Hover */}
             <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-10">

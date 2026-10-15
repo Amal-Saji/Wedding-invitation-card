@@ -208,8 +208,8 @@ function CelebrationApp() {
       )}
       <HeroVideo />
       <WelcomeMessageSection />
-      <EventsBreakdownSection />
       <CountdownSection />
+      <EventsBreakdownSection />
       <Gallery onOpenLightbox={(idx) => setLightboxIndex(idx)} />
       <Venue />
       <Footer />

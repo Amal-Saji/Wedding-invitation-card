@@ -40,12 +40,18 @@ export const Route = createFileRoute("/")({
 });
 
 const galleryImgs = [
-  { src: "/images/gallery-1.jpg", alt: "Abin & Rinu — In Holy Matrimony", cls: "col-span-2 row-span-2" },
-  { src: "/images/gallery-2.jpg", alt: "Cherished Moments", cls: "col-span-1 row-span-1" },
-  { src: "/images/story-1.jpg", alt: "A Journey of Love", cls: "col-span-1 row-span-1" },
-  { src: "/images/gallery-3.jpg", alt: "Bound by Love & Faith", cls: "col-span-1 row-span-1" },
-  { src: "/images/gallery-4.jpg", alt: "Forever Together", cls: "col-span-1 row-span-1" },
-  { src: "/images/story-2.jpg", alt: "Two Hearts as One", cls: "col-span-1 row-span-1" },
+  { src: "/images/wedding-01.jpg", alt: "Abin & Rinu — In Holy Matrimony", cls: "col-span-2 row-span-2" },
+  { src: "/images/wedding-02.jpg", alt: "A Sacred Promise", cls: "col-span-1 row-span-1" },
+  { src: "/images/wedding-03.jpg", alt: "Two Hearts United", cls: "col-span-1 row-span-1" },
+  { src: "/images/wedding-04.jpg", alt: "Cherished Moments", cls: "col-span-1 row-span-1" },
+  { src: "/images/wedding-05.jpg", alt: "Laughter & Grace", cls: "col-span-1 row-span-1" },
+  { src: "/images/wedding-06.jpg", alt: "Joyful Beginnings", cls: "col-span-1 row-span-1" },
+  { src: "/images/wedding-07.jpg", alt: "Forever & Always", cls: "col-span-1 row-span-1" },
+  { src: "/images/wedding-08.jpg", alt: "Blessed by Love", cls: "col-span-2 row-span-2" },
+  { src: "/images/wedding-11.jpg", alt: "Together in Every Step", cls: "col-span-2 row-span-1" },
+  { src: "/images/wedding-12.jpg", alt: "Endless Happiness", cls: "col-span-1 row-span-1" },
+  { src: "/images/wedding-14.jpg", alt: "Grace & Radiance", cls: "col-span-1 row-span-1" },
+  { src: "/images/wedding-15.jpg", alt: "A Celebration of Love", cls: "col-span-2 row-span-1" },
 ];
 
 function CelebrationApp() {
@@ -308,9 +314,15 @@ function LightboxModal({
           alt={currentImage.alt}
           className="max-w-full max-h-[78vh] object-contain rounded-sm border border-white/20 shadow-2xl"
         />
-        <p className="mt-4 font-sans-ui text-sm sm:text-base text-sand tracking-widest text-center drop-shadow-md">
-          {currentImage.alt}
-        </p>
+        <div className="mt-3 flex flex-wrap items-center justify-center gap-2.5">
+          <p className="font-sans-ui text-xs sm:text-sm text-sand tracking-widest text-center drop-shadow-md">
+            {currentImage.alt}
+          </p>
+          <span className="text-white/40">•</span>
+          <span className="font-sans-ui text-xs text-white/70 tracking-widest">
+            {currentIndex + 1} / {images.length}
+          </span>
+        </div>
       </div>
 
       {/* Next Arrow */}
@@ -893,12 +905,12 @@ function Gallery({ onOpenLightbox }: { onOpenLightbox: (index: number) => void }
           Glimpses of love, joy, and cherished celebrations.
         </p>
       </div>
-      <div className="mx-auto mt-14 grid max-w-6xl grid-cols-2 md:grid-cols-4 gap-4 px-6 auto-rows-[200px] sm:auto-rows-[250px]">
+      <div className="mx-auto mt-14 grid max-w-6xl grid-cols-2 md:grid-cols-4 gap-4 sm:gap-5 px-4 sm:px-6 auto-rows-[220px] sm:auto-rows-[270px]">
         {galleryImgs.map((g, i) => (
           <figure
             key={i}
             onClick={() => onOpenLightbox(i)}
-            className={`group relative overflow-hidden rounded-sm border border-primary/20 shadow-[var(--shadow-soft)] cursor-pointer ${g.cls}`}
+            className={`group relative overflow-hidden rounded-sm border border-primary/25 bg-ivory shadow-[var(--shadow-soft)] cursor-pointer transition-all duration-300 hover:border-primary/60 hover:shadow-xl ${g.cls}`}
           >
             <img
               src={g.src}
@@ -906,7 +918,13 @@ function Gallery({ onOpenLightbox }: { onOpenLightbox: (index: number) => void }
               loading="lazy"
               className="h-full w-full object-cover object-top transition duration-700 group-hover:scale-105"
             />
-            <figcaption className="absolute bottom-0 inset-x-0 p-3 bg-gradient-to-t from-black/80 via-black/40 to-transparent text-white text-xs sm:text-sm font-sans-ui tracking-wider drop-shadow-sm opacity-0 group-hover:opacity-100 transition duration-300">
+            {/* Subtle Zoom Pill on Hover */}
+            <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-10">
+              <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-black/50 text-white backdrop-blur-sm text-xs border border-white/20 shadow-sm">
+                🔍
+              </span>
+            </div>
+            <figcaption className="absolute bottom-0 inset-x-0 p-3.5 bg-gradient-to-t from-black/85 via-black/45 to-transparent text-white text-xs sm:text-sm font-sans-ui tracking-wider drop-shadow-sm opacity-0 group-hover:opacity-100 transition duration-300">
               {g.alt}
             </figcaption>
           </figure>
